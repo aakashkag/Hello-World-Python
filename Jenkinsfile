@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build Stage'
+                sh 'python helloworld.py'
             }
         }
         stage('QA') {
