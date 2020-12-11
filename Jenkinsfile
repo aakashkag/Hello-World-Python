@@ -2,10 +2,12 @@
 pipeline {
     agent any 
     stages {
-        stage('Initialize') {
+        stage('Setup') {
             steps {
-                echo 'Initialize Stage ' 
-               
+                echo 'Setup Stage'
+                sh """
+          		    pip install -r requirements.txt
+          	     """ 
             }
         }
         stage('Build') {
