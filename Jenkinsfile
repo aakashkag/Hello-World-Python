@@ -6,8 +6,8 @@ pipeline {
             steps {
                 echo 'Setup Stage'
                 sh """
-                    PATH=${PATH}:/usr/local/bin
-          		    pip install -r requirements.txt
+                    PATH=${PATH}:/usr/bin
+          		    pip3 install -r requirements.txt
           	     """ 
             }
         }
