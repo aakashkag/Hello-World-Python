@@ -1,21 +1,16 @@
 
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent any
     stages {
         stage('Setup') {
             steps {
                 echo 'Setup Stage'
                 sh 'python --version'
-                sh """
-                    PATH=${PATH}:/usr/bin
-          		    pip3 install -r requirements.txt
-          	     """ 
             }
         }
         stage('Build') {
             steps {
                 echo 'Build Stage'
-                sh 'python helloworld.py'
             }
         }
         stage('QA') {
